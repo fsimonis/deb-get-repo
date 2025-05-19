@@ -2,7 +2,7 @@ DEFVER=1
 get_github_releases "precice/calculix-adapter" "latest"
 ARCHS_SUPPORTED="amd64"
 if [ "${ACTION}" != "prettylist" ]; then
-        URL="$(grep -m 1 "browser_download.url.*calculix-precice*_${OS_CODENAME}.deb\"" "${CACHE_FILE}" | cut -d '"' -f 4 )"
+        URL="$(grep -m 1 "browser_download.url.*calculix-precice3_.*_${OS_CODENAME}.deb" "${CACHE_FILE}" | cut -d '"' -f 4 )"
         VERSION_PUBLISHED="$( echo "${URL}" | cut -d '/' -f 8 )"
 fi
 PRETTY_NAME="preCICE-adapter for CalculiX"
